@@ -9,9 +9,13 @@ var rushita =require("../controller/usercontroller");
 //   res.render('index', { title: 'Express' });
 // });
 
-// module.exports = router;
+// 
 
 router.post('/',rushita.insert)
 router.get('/',rushita.get_data)
-module.exports = router;
+router.get('/update/:id',rushita.get_data_update);
+router.post('/update/:id',rushita.update);
+router.get('/delete/:id',rushita.delete);
+router.post('/login',rushita.login);
 
+module.exports = router;
